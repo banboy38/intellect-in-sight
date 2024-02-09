@@ -7,7 +7,7 @@ export default function Bot({usecase}){
         <div className=" w-[70%] h-[90%]  bg-white rounded-md shadow-xl flex flex-col">
 
             <div className="flex flex-col gap-1 w-[100%] p-[2rem]">
-                <h6 className=" text-3xl font-semibold">Ask me anything regarding '{usecase}'</h6>
+                <h6 className=" text-3xl font-semibold">Ask me anything regarding {usecase}</h6>
                 <div className="text-xs text-gray-500">Please perform any conversational analysis on {usecase}</div>
             </div>
 
