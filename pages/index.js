@@ -8,7 +8,7 @@ export default function Home() {
   const [conversation, setConversation] = useState([["bot","Hello! I'm your Bot!"]])
 
   return (
-    <div className="">
+    <div className="bg-gray-100">
       <SideBar setConversation={setConversation} setusecase={setusecase} settoggle={settoggle} toggle={toggle}/>
       <Main conversation={conversation} setConversation={setConversation} usecase={usecase} toggle = {toggle}/>
 
