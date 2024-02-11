@@ -25,7 +25,7 @@ export default function Bot({usecase, conversation, setConversation}){
     }
 
     return(
-        <div className=" w-[90%] h-[90%]  bg-white rounded-md shadow-xl flex flex-col">
+        <div className=" w-[90%] max-h-[90%]  bg-white rounded-md shadow-xl flex flex-col">
             
             {/* Heading section */}
             <div className="flex flex-col gap-1 w-[100%] p-[1rem]">
@@ -34,7 +34,7 @@ export default function Bot({usecase, conversation, setConversation}){
             </div>
 
             {/* Conversation section */}
-            <div className="h-[80%] w-[100%] bg-gray-100 overflow-auto text-xs px-5 py-3 flex flex-col gap-3">
+            <div className="h-[20rem] w-[100%] bg-gray-100 overflow-auto text-xs px-5 py-3 flex flex-col gap-3">
                 {
                     conversation.map((item, idx)=>{
                         return(
