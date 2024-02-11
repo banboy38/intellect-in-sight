@@ -1,12 +1,21 @@
 import { IoSend } from "react-icons/io5";
 import Reply from "./Reply";
 import Query from "./Query";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 export default function Bot({usecase, conversation, setConversation}){
 
     const [query, setQuery] = useState("")
+
+    const messagesEndRef = useRef(null)
+
+    const scrollToBottom = () => {
+        setTimeout(() => {            
+            messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+        }, 100);
+    }
+    
 
     function handleQuery(e){
         e.preventDefault()
@@ -50,13 +59,14 @@ export default function Bot({usecase, conversation, setConversation}){
                         )
                     })
                 }
+                <div ref={messagesEndRef}></div>
             </div>
             
             {/* Query input section */}
             <form className="h-[4rem] px-6 focus:border flex justify-center items-center">
                 <input value={query} onChange={(e)=>{setQuery(e.target.value)}} type="text" className="w-[100%] h-[100%] text-gray-500" placeholder="Enter query..."/>
 
-                <button onClick={(e)=>{handleQuery(e)}} className="text-gray-500 hover:text-blue-800 duration-300 ease-in-out"><IoSend/></button>
+                <button onClick={(e)=>{handleQuery(e); scrollToBottom(e)}} className="text-gray-500 hover:text-blue-800 duration-300 ease-in-out"><IoSend/></button>
             
             </form>
         </div>
