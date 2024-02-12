@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    background-color: rgb(243 244 246);
+}
+
 input[type="text"]{
     border-radius: 5px;
     padding: 7px;

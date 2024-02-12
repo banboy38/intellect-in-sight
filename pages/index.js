@@ -12,6 +12,7 @@ export default function Home() {
       {/* Sidebar for options */}
       <SideBar setConversation={setConversation} setusecase={setusecase} settoggle={settoggle} toggle={toggle}/>
       
+      {/* Main div */}
       <div className="bg-gray-100 flex justify-start items-center">
         <Main conversation={conversation} setConversation={setConversation} usecase={usecase} toggle = {toggle}/>
       </div>
