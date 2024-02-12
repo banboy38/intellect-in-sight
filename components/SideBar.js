@@ -27,7 +27,7 @@ export default function SideBar({settoggle, toggle, setusecase, setConversation}
                 <input className=" rounded p-[7px] text-sm bg-blue-900 duration-300 ease-in-out hover:bg-blue-950  hover:cursor-pointer" type="submit" value={"Upload CSV"}/>
 
         
-
+                {/* A white line for aesthetics */}
                 <div className="flex justify-between items-center my-1">
                     <div className="w-[100%] h-[1px] bg-white"></div>
                 </div>

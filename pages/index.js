@@ -1,5 +1,4 @@
 import Main from "@/components/Main";
-import NavBar from "@/components/NavBar";
 import SideBar from "@/components/SideBar";
 import { useState } from "react";
 
@@ -10,12 +9,11 @@ export default function Home() {
 
   return (
     <>
+      {/* Sidebar for options */}
       <SideBar setConversation={setConversation} setusecase={setusecase} settoggle={settoggle} toggle={toggle}/>
       
       <div className="bg-gray-100 flex justify-start items-center">
-
         <Main conversation={conversation} setConversation={setConversation} usecase={usecase} toggle = {toggle}/>
-
       </div>
     </>
   );
