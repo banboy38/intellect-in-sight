@@ -1,4 +1,5 @@
 import Main from "@/components/Main";
+import NavBar from "@/components/NavBar";
 import SideBar from "@/components/SideBar";
 import { useState } from "react";
 
@@ -8,10 +9,14 @@ export default function Home() {
   const [conversation, setConversation] = useState([["bot","Hello! I'm your Bot!"]])
 
   return (
-    <div className="bg-gray-100 flex justify-center items-center">
+    <>
       <SideBar setConversation={setConversation} setusecase={setusecase} settoggle={settoggle} toggle={toggle}/>
-      <Main conversation={conversation} setConversation={setConversation} usecase={usecase} toggle = {toggle}/>
+      
+      <div className="bg-gray-100 flex justify-start items-center">
 
-    </div>
+        <Main conversation={conversation} setConversation={setConversation} usecase={usecase} toggle = {toggle}/>
+
+      </div>
+    </>
   );
 }

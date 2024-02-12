@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Main({toggle, usecase, conversation, setConversation}){
 
     return(
-        <div className=" w-[81vw] h-[89.1vh] flex justify-center items-center bg-gray-100">
+        <div className=" ml-[16rem] w-[85vw] h-[89vh] flex justify-center items-center bg-gray-100">
             {
                 toggle
                 ?
