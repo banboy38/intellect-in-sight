@@ -43,7 +43,7 @@ export default function Bot({usecase, conversation, setConversation}){
             </div>
 
             {/* Conversation section */}
-            <div className="h-[25rem] w-[100%] bg-gray-100 overflow-auto text-xs px-5 py-3 flex flex-col gap-3">
+            <div className="h-[23rem] lg:[30rem] w-[100%] bg-gray-100 overflow-auto text-xs px-5 py-3 flex flex-col gap-3">
                 {
                     conversation.map((item, idx)=>{
                         return(

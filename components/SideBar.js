@@ -1,9 +1,9 @@
 export default function SideBar({settoggle, toggle, setusecase, setConversation}){
 
     return(
-        <div className=" fixed left-0 bottom-0 w-[16rem] h-[93vh] overflow-y-auto text-white bg-blue-800 flex flex-col justify-start items-center">
+        <div className=" fixed left-0 bottom-0 w-[16rem] h-[100vh] overflow-y-auto text-white bg-blue-800 flex flex-col justify-start items-center">
 
-            <div className="mt-[2rem] w-full p-3 flex flex-col gap-3">
+            <div className="mt-[5.5rem] w-full p-3 flex flex-col gap-3">
                 
                 <h6 className=" mb-3 text-xl font-semibold">IntellectInSight</h6>
 
