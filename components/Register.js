@@ -1,4 +1,8 @@
+import { useEffect, useState } from "react"
+
 export default function Register(){
+
+    const [autometadataChecked, setautometadataChecked] = useState(false)
 
     function focusOnURI(e){
 
@@ -44,96 +48,111 @@ export default function Register(){
 
     }
 
-    return(
-        <div className=" w-[60%] min-h-[70%] text-black bg-white p-[2rem] rounded-md shadow-xl ">
-            
-            <form className="flex flex-col gap-3">
-                <div className=" text-2xl text-blue-800 font-semibold">Register new usecase</div>
+    function autometadata(){
+        setautometadataChecked(!autometadataChecked)
+    }
+    
 
+    return(
+        <div className=" w-[60%] min-h-[70%] text-black bg-white p-[1rem] rounded-md shadow-xl ">
+            
+            <form className="flex flex-col gap-2">
+
+                <div className=" text-2xl text-blue-800 font-semibold">Register new usecase</div>
                 <div className="flex gap-2">
                     <div className="w-1/3 font-semibold">
-                        <div>
-                            DB Name*
+                        <div className="text-sm">
+                            UseCase Name
                         </div>
-                        <input id="dbname" onChange={(e)=>{focusOnDB(e)}} type="text" placeholder="DB name" className="border border-gray-300 w-[100%]"/>
+                        <input type="text" placeholder="UseCase Name" className="border border-gray-300 w-[100%]"/>
                     </div>
 
                     <div className="w-1/3 font-semibold">
-                        <div>
+                        <div className="text-sm">
+                            Description
+                        </div>
+                        <input type="text" placeholder="Description" className="border border-gray-300 w-[100%]"/>
+                    </div>
+                </div>
+
+                <div className=" text-2xl text-blue-800 font-semibold">Connect to Database</div>
+
+                <div className="flex gap-2">
+                    <div className="w-1/2 font-semibold">
+                        <div className="text-sm">
+                            URI
+                        </div>
+                        <input onChange={(e)=>{focusOnURI(e)}} id="uri" type="text" placeholder="Username" className="border border-gray-300 w-[100%]"/>
+                    </div>
+                </div>
+
+                <div className="flex gap-2">
+                    <div className="w-1/3 font-semibold">
+                        <div className="text-sm">
+                            Database Name*
+                        </div>
+                        <input id="dbname" onChange={(e)=>{focusOnDB(e)}} type="text" placeholder="Database Name" className="border border-gray-300 w-[100%]"/>
+                    </div>
+
+                    <div className="w-1/3 font-semibold">
+                        <div className="text-sm">
                             Password*
                         </div>
                         <input id="password" onChange={(e)=>{focusOnDB(e)}} type="text" placeholder="Password" className="border border-gray-300 w-[100%]"/>
                     </div>
 
                     <div className="w-1/3 font-semibold">
-                        <div>
-                            Host*
+                        <div className="text-sm">
+                            Hostname*
                         </div>
-                        <input id="hostname" onChange={(e)=>{focusOnDB(e)}} type="text" placeholder="Host" className="border border-gray-300 w-[100%]"/>
+                        <input id="hostname" onChange={(e)=>{focusOnDB(e)}} type="text" placeholder="Hostname" className="border border-gray-300 w-[100%]"/>
                     </div>
                 </div>
 
                 <div className="flex gap-2">
                     <div className="w-1/3 font-semibold">
-                        <div>
+                        <div className="text-sm">
                             Port*
                         </div>
                         <input id="port" onChange={(e)=>{focusOnDB(e)}} type="text" placeholder="Port" className="border border-gray-300 w-[100%]"/>
                     </div>
 
                     <div className="w-1/3 font-semibold">
-                        <div>
-                            Name
+                        <div className="text-sm">
+                            Username
                         </div>
-                        <input type="text" placeholder="Name" className="border border-gray-300 w-[100%]"/>
-                    </div>
+                        <input type="text" placeholder="Username" className="border border-gray-300 w-[100%]"/>
+                    </div>      
 
                     <div className="w-1/3 font-semibold">
-                        <div>
-                            Group
+                        <div className="text-sm">
+                            SID
                         </div>
-                        <input type="text" placeholder="Group" className="border border-gray-300 w-[100%]"/>
-                    </div>                    
+                        <input type="text" placeholder="SID" className="border border-gray-300 w-[100%]"/>
+                    </div>         
                 </div>
 
                 <div className="flex gap-2">
-                    <div className="w-1/3 font-semibold">
-                        <div>
-                            URI
+                    <div className="w-1/2 font-semibold">
+                        <div className="text-sm">
+                            ServiceName
                         </div>
-                        <input onChange={(e)=>{focusOnURI(e)}} id="uri" type="text" placeholder="Username" className="border border-gray-300 w-[100%]"/>
+                        <input type="text" placeholder="ServiceName" className="border border-gray-300 w-[100%]"/>
                     </div>
 
-                    <div className="w-1/3 font-semibold">
-                        <div>
-                            Auth Type
-                        </div>
-                        <input type="text" placeholder="Auth Type" className="border border-gray-300 w-[100%]"/>
-                    </div>
-
-                    <div className="w-1/3 font-semibold">
-                        <div>
-                            Database
-                        </div>
-                        <input type="text" placeholder="Database" className="border border-gray-300 w-[100%]"/>
-                    </div>
+                    
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <div className="font-semibold">
+                    <div className="font-semibold text-sm">
                         Server Type
                     </div>
 
-                    <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
 
                         <div className="flex gap-2">
                             <input type="radio" name="server" id="MySQL" value={"MySQL"}/>
                             <label htmlFor="MySQL">MySQL</label>
-                        </div>
-
-                        <div className="flex gap-2">
-                            <input type="radio" name="server" id="MariaDB" value={"MariaDB"}/>
-                            <label htmlFor="MariaDB">MariaDB</label>
                         </div>
 
                         <div className="flex gap-2">
@@ -147,46 +166,44 @@ export default function Register(){
                         </div>
 
                         <div className="flex gap-2">
-                            <input type="radio" name="server" id="SQL Server" value={"SQL Server"}/>
-                            <label htmlFor="SQL Server">SQL Server</label>
-                        </div>
-
-                        <div className="flex gap-2">
                             <input type="radio" name="server" id="Oracle" value={"Oracle"}/>
                             <label htmlFor="Oracle">Oracle</label>
                         </div>
-
-                        <div className="flex gap-2">
-                            <input type="radio" name="server" id="JDBC" value={"JDBC"}/>
-                            <label htmlFor="JDBC">JDBC</label>
-                        </div>
-
-                        <div className="flex gap-2">
-                            <input type="radio" name="server" id="DuckDB" value={"DuckDB"}/>
-                            <label htmlFor="DuckDB">DuckDB</label>
-                        </div>
-
-                        <div className="flex gap-2">
-                            <input type="radio" name="server" id="ClickHouse" value={"ClickHouse"}/>
-                            <label htmlFor="ClickHouse">ClickHouse</label>
-                        </div>
-                        {/* <input type="radio" name="JDBC" id="JDBC" value={"JDBC"}/>
-                        <input type="radio" name="JDBC" id="JDBC" value={"JDBC"}/> */}
                     </div>
                 </div>
 
-                <div className="flex justify-between items-center w-[100%]">
-                    <input onClick={(e)=>{e.preventDefault()}} className=" rounded p-[7px] text-sm text-white w-[12rem] bg-blue-900 duration-300 ease-in-out hover:bg-blue-950  hover:cursor-pointer" type="submit" value={"Submit"}/>
+                {/* <div className="flex justify-between items-center w-[100%]">
+                    <input onClick={(e)=>{e.preventDefault()}} className=" rounded p-[7px] text-sm text-white w-[12rem] bg-blue-900 duration-300 ease-in-out hover:bg-blue-950  hover:cursor-pointer" type="submit" value={"Submit"}/>                    
+                </div> */}
+            </form>
+            
+            <div className="w-[100%] bg-black h-[1px] my-3"></div>
 
-                    <div className="flex gap-2 justify-center items-center">
-                        <div>
-                            Auto-Metadata
-                        </div>
-                        <input className="w-[12rem] border border-gray-300 focus:border-black duration-300 ease-in-out p-1" type="file"/>
+            <form className="flex flex-col gap-2">
+                <div className=" text-2xl text-blue-800 font-semibold">Upload DB MetaData</div>
+
+                <div className="flex justify-between">
+                    <div className="flex gap-2 justify-start items-center">
+
+                        <input onClick={autometadata} type="checkbox" id="autometadataCheck"/>
+                        <label htmlFor="autometadataCheck">AutoMetadata</label>
+                        
+                        {
+                            !autometadataChecked
+                            ?
+                            <input id="autometadata" type="file" className="border border-1 border-gray-300 p-1"/>
+                            :
+                            <div className="h-[2.45rem]"></div>
+
+                        }
                     </div>
-                    
+
+                    <button className="rounded p-[7px] text-white text-sm bg-blue-900 duration-300 ease-in-out hover:bg-blue-950  hover:cursor-pointer w-[12rem]">Submit</button>
                 </div>
-            </form> 
+
+            </form>
+
+
             
         </div>
     )
