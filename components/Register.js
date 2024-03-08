@@ -54,7 +54,7 @@ export default function Register(){
     
 
     return(
-        <div className=" w-[60%] min-h-[70%] text-black bg-white p-[1rem] rounded-md shadow-xl ">
+        <div className="w-[70%] min-h-[70%] max-h-[90%] text-black bg-white p-[1rem] rounded-md shadow-xl overflow-auto ">
             
             <form className="flex flex-col gap-2">
 
@@ -75,14 +75,14 @@ export default function Register(){
                     </div>
                 </div>
 
-                <div className=" text-2xl text-blue-800 font-semibold">Connect to Database</div>
+                <div className=" text-xl text-blue-800 font-semibold">Connect to Database</div>
 
                 <div className="flex gap-2">
                     <div className="w-1/2 font-semibold">
                         <div className="text-sm">
                             URI
                         </div>
-                        <input onChange={(e)=>{focusOnURI(e)}} id="uri" type="text" placeholder="Username" className="border border-gray-300 w-[100%]"/>
+                        <input onChange={(e)=>{focusOnURI(e)}} id="uri" type="text" placeholder="URI" className="border border-gray-300 w-[100%]"/>
                     </div>
                 </div>
 
@@ -180,7 +180,7 @@ export default function Register(){
             <div className="w-[100%] bg-black h-[1px] my-3"></div>
 
             <form className="flex flex-col gap-2">
-                <div className=" text-2xl text-blue-800 font-semibold">Upload DB MetaData</div>
+                <div className=" text-xl text-blue-800 font-semibold">Upload DB MetaData</div>
 
                 <div className="flex justify-between">
                     <div className="flex gap-2 justify-start items-center">
